@@ -145,44 +145,19 @@ const data = [
   const books = getBooks();
   const book = getBook(3);
   
-  //====================================================
-  //_______________ Array_Map _________________
-  //map loop an method ,  return new array with  some applied operations on  original Array
-  //====================================================  
-  const x = [1,2,3,4,5].map((el)=> el*2);
-  x;
+//====================================================
+//_______________ Array_Filter _________________
+//fillter loop an method ,  return new array after filter orignal array
+//let i have   1 to 100 record   , i want  to fileter only    29 to 31  recod s
+//====================================================  
 
-  const title = books.map((book)=> book.title);
-  title;
-
-  //------- 1st way -----
-  //___ with essentialData ___ (multiple  properties)
-  const essentialData = books.map((book)=>({
-    title:book.title,
-    author:book.author,
-    reviewsCount: getTotalReviewCounts(book)
-  }))
-  essentialData;
-
-  //------- 2nd way with return -----
-  //___ with essentialData ___ (multiple  properties)
-  const essentialData1 = books.map((book)=> {
-    return{
-        title:book.title,
-        author:book.author,
-        reviewsCount: getTotalReviewCounts(book)
-      }
-   })
-  essentialData1;
+var s = books
+    .filter((book)=> book.pages > 500)
+    .filter((book)=> book.hasMovieAdaptation)  
+s;
 
 
+var adventureBooks = books.filter((books)=>books.genres.includes("adventure"))
+  .map((book)=>book.title);
 
-
-
-  
-function getTotalReviewCounts(books){
-    const goodreads = books.reviews?.goodreads?.reviewsCount ?? 0;
-    const librarything = books.reviews?.librarything?.reviewsCount ?? 0;
-    librarything;
-    return goodreads + librarything;
-}
+  adventureBooks;
