@@ -146,10 +146,35 @@ const data = [
   const book = getBook(3);
   
 //====================================================
-//_______________ Array_reduce _________________
-//reduce very powerfull method  in all method of js
-//goal of reduce is to reduce  basically   entire array to just 1 value 
+//_______________ Array_Sort _________________
+//to short array or data
+//====================================================  
+var arr1 = [3,7,5,1,9,8];
+
+//assending
+const sorted1 = arr1.sort((a,b) => a-b);
+sorted1;
+
+//descending
+const sorted2 = arr1.sort((a,b) => b-a);
+sorted2;
+
+//----- slice() ---
+//to create the copy of orignal  Array
+//because  sort  will effect the original array   
+var arr2 = [22,55,11,15,19,44,33,25,32]
+const sorted3 = arr2.slice().sort((a,b) => b-a);
+sorted3;
+arr2;
+
+
+//====================================================
+//_______________ object_Sort _________________
+//to short object data
 //====================================================  
 
-var totalpagesofbookinallrecords = books.reduce((acc,book) => acc+book.pages,0);
-totalpagesofbookinallrecords;
+const sortedBookByPagesAssc = books.slice().sort((a,b) => a.pages - b.pages);
+const sortedBookByPagesDesc = books.slice().sort((a,b) => b.pages - a.pages);
+
+sortedBookByPagesAssc;
+sortedBookByPagesDesc

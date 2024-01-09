@@ -149,6 +149,7 @@ const data = [
 //_______________ Array_reduce _________________
 //reduce very powerfull method  in all method of js
 //goal of reduce is to reduce  basically   entire array to just 1 value 
+//acc => accumulator  (jamaa krnaa walaa)
 //====================================================  
 
 var totalpagesofbookinallrecords = books.reduce((acc,book) => acc+book.pages,0);
