@@ -163,3 +163,12 @@ const booksafterDelete = booksafterAdd.filter((book) => book.id !== 3)
 booksafterDelete;
 
 //_____ Update ____
+const booksafterUpdate = booksafterDelete.map((book) => book.id === 4 ? 
+  {
+    id : 4,
+    title: "after update",
+    author:"pk"
+  } 
+  : book 
+)
+booksafterUpdate;
